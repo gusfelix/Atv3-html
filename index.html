@@ -17,7 +17,7 @@
             <form action="enviar.php" method="post" name="dados_carro">
 
                 <tr>
-                <td>
+                <td colspan="2">
                     <fieldset>
                         <legend> <strong>Dados do proprietário</strong> </legend>
 
@@ -98,21 +98,14 @@
                                 </tr>
 
                                 <tr>
-                                    <td align="right"><label for="tipo">Tipo: </label></td>
-                                    <td>
-                                        <select name="tipo" id="tipo" required>
-                                            <option value="" selected="selected">--Selecione--</option>
-                                            <option value="VP">Veículo de passeio</option>
-                                            <option value="M">Motocicleta</option>
-                                        </select>
-                                        
-                                    </td>
-
-                                    <td align="right"><label for="placa">Placa:</label></td>
-                                    <td><input type="text" id="placa" name="placa" minlength="7" maxlength="7" placeholder="AAA0000 ou AAA0A00" required/></td>
+                                    <td align="right"><label for="modelo">Modelo: </label></td>
+                                    <td><input type="text" id="modelo" name="modelo" placeholder="digite a modelo" required/></td>
 
                                     <td align="right"><label for="marca">Marca: </label></td>
                                     <td><input type="text" name="marca" id="marca" placeholder="digite a marca" required/></td>
+
+                                    <td align="right"><label for="placa">Placa:</label></td>
+                                    <td><input type="text" id="placa" name="placa" minlength="7" maxlength="7" placeholder="AAA0000 ou AAA0A00" required/></td>
                                 </tr>
 
                                 <tr>
@@ -169,28 +162,34 @@
                                     <td align="right"><label for="renavam">RENAVAM: </label></td>
                                     <td><input type="text" id="renavam" name="renavam" placeholder="renavam do veículo" required/></td>
 
-                                    <td align="right"><label for="modelo">Modelo: </label></td>
-                                    <td><input type="text" id="modelo" name="modelo" placeholder="digite a modelo" required/></td>
+                                    <td align="right"><label for="ano">Ano: </label></td>
+                                    <td><input type="number" id="ano" name="ano" min="1950" max="2022" value="" required/></td>
                                 </tr>
 
                                 <tr>
                                     <td align="right"><label for="kms">Quilometragem: </label></td>
-                                    <td><input type="number" id="kms" name="kms" step="0.1" value="0" min="0" max="10000000000000" required/></td>
+                                    <td><input type="number" id="kms" name="kms" step="10" value="0" min="0" max="10000000000000" required/></td>
 
-                                    <td align="right"><label for="ano">Ano: </label></td>
-                                    <td><input type="number" id="ano" name="ano" min="1950" max="2022" value="" required/></td>
+                                    <td colspan="3"><label for="tipo">Tipo: </label>
+                                    
+                                         <label> <input type="radio" id="tipo" name="tipo" value="C" required> Carro</label>
+                                         <label> <input type="radio" id="tipo" name="tipo" value="M" required> Moto</label>
+                                         <label> <input type="radio" id="tipo" name="tipo" value="O" required> Outro: </label>
+                                         <input type="text" name="outro" id="outro" size="8" disabled>
+                                    </td>   
 
-                                    <td align="right"><label for="cor">Cor: </label></td>
-                                    <td><input type="color" id="cor" name="cor"/></td>
+                                    <td align="">
+                                        <label for="cor">Cor: </label>
+                                        <input type="color" id="cor" name="cor"/>
+                                    </td>
                                 </tr>
 
 
                                 <tr>
                                     <td align="right"><label for="fotocrlv"> Foto do CRLV: </label></td>
-                                    <td colspan="5"><input type="file" id="fotocrlv" nasme="fotocrlv" required></td>    
+                                    <td colspan="2"><input type="file" id="fotocrlv" nasme="fotocrlv" required></td>
                                 </tr>
 
-                                
                             </table>
                         
                     </fieldset>
@@ -199,6 +198,12 @@
                 </tr>
 
                 <tr>
+                    <td align="">
+                        <label><input type="checkbox" name="declare" id="delcare" required/>Declaro que li e estou de acordo com as
+                            <a href="">Políticas de Privacidade</a>
+                        </label>
+                    </td>
+
                     <td align="right">
                         <button type="reset">Limpar
                             <img src="img/recycle-bin.png" alt="imagem de uma lixeira" title="Limpar formulário" width="15"/>
@@ -209,6 +214,7 @@
                     </td>
                 </tr>
 
+      
             </form>
 
         </table>
